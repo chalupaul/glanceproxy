@@ -14,12 +14,12 @@ Requirements
 Setup
 =====
 
-    cd /path/to/your/dev/dir
-    git clone git@github.com:chalupaul/glanceproxy.git
-    virtualenv -p python3 glanceproxy
-    cd glanceproxy
-    source bin/activate
-    pip install pyyaml requests bottle
+    $ cd /path/to/your/dev/dir
+    $ git clone git@github.com:chalupaul/glanceproxy.git
+    $ virtualenv glanceproxy
+    $ cd glanceproxy
+    $ source bin/activate
+    $ pip install pyyaml requests bottle
 
 Point apache2 to the www directory and go!
 
