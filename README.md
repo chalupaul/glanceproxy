@@ -20,11 +20,9 @@ Setup
     $ cd glanceproxy
     $ source bin/activate
     $ pip install pyyaml requests bottle
+    $ python src/glanceproxy.py
 
-Point apache2 to the www directory and go!
-
-Use this for your apache config:
-
+If you want to deploy it using mod_wsgi, you can use this for your apache config:
 
     WSGIDaemonProcess glanceproxy user=www-data group=www-data processes=1 threads=5
     WSGIScriptAlias / /var/www/glanceproxy/www/adapter.wsgi
