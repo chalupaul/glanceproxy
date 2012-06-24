@@ -6,17 +6,10 @@ A multi-glance front end that supports inline image conversion and glance syncin
 Requirements
 ============
 
-*) python 3
 
-*) pyyaml
-
-*) bottle
-
-*) requests
-
-*) virtualenv
-
-*) pip/easy_install (of course)
+*  pyyaml
+*  bottle
+*  requests
 
 Setup
 =====
@@ -34,3 +27,16 @@ source bin/activate
 pip install pyyaml requests bottle
 
 Point apache2 to the src directory and go!
+
+Use this for your apache config:
+
+
+    WSGIDaemonProcess glanceproxy user=www-data group=www-data processes=1 threads=5
+    WSGIScriptAlias / /var/www/glanceproxy/www/adapter.wsgi
+
+    <Directory /var/www/glanceproxy>
+        WSGIProcessGroup glanceproxy
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>

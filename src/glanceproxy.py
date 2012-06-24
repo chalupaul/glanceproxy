@@ -8,7 +8,7 @@ confs = yaml.load(open(conf_file))
 
 @route('/test')
 def test():
-    return __name__
+    return __name__ 
 
 if __name__ == '__main__':
     debug(True)
